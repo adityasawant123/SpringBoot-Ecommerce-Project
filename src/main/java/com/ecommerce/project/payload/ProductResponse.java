@@ -16,5 +16,4 @@ public class ProductResponse {
     private Integer totalPages;
     private boolean lastPage;
 
-    private boolean flag;
 }
