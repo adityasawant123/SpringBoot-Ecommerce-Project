@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.stream.Stream;
+
 @Entity
 @Data
 @Table(name = "cart_items")
@@ -27,5 +29,6 @@ public class CartItem {
     private Integer quantity;
     private double discount;
     private double productPrice;
+
 
 }
