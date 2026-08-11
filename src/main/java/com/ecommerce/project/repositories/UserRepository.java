@@ -1,4 +1,4 @@
-package com.ecommerce.project.security.repositories;
+package com.ecommerce.project.repositories;
 
 import com.ecommerce.project.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,7 +8,9 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+
     Optional<User> findByUserName(String username);
+
     Boolean existsByUserName(String username);
 
     Boolean existsByEmail(String email);

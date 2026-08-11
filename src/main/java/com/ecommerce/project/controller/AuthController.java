@@ -5,7 +5,7 @@ import com.ecommerce.project.model.Role;
 import com.ecommerce.project.model.User;
 import com.ecommerce.project.repositories.RoleRepository;
 import com.ecommerce.project.security.jwt.JwtUtils;
-import com.ecommerce.project.security.repositories.UserRepository;
+import com.ecommerce.project.repositories.UserRepository;
 import com.ecommerce.project.security.request.LoginRequest;
 import com.ecommerce.project.security.request.SignupRequest;
 import com.ecommerce.project.security.response.MessageResponse;
@@ -79,8 +79,10 @@ public class AuthController {
 
         UserInfoResponse response = new UserInfoResponse(
                 userDetails.getId(),
+                jwtCookie.toString(),
                 userDetails.getUsername(),
-                roles);
+                roles
+                );
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,
                 jwtCookie.toString())
                 .body(response);
